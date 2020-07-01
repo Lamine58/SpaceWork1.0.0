@@ -1,9 +1,9 @@
 <?php
 
-    define('USER', "root");
+    define('USER', "");
     define('PASSWORD', "");
-    define('SERVER', "localhost");
-    define('DB', "restaurant");
+    define('SERVER', "");
+    define('DB', "");
 
     date_default_timezone_set('Africa/Abidjan');
 
@@ -15,7 +15,7 @@
         return $db;
     }
     catch (Exception $e){
-        die('Erreur : ' . $e->getMessage());
+        // die('Erreur : ' . $e->getMessage());
     }
 
 

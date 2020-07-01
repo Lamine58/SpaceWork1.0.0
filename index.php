@@ -25,10 +25,10 @@
 
     HeaderXframe(0);
 
-    if(!visitor::at_visite(visitor::ip())){
+    // if(!visitor::at_visite(visitor::ip())){
 
-    	// visitor::create(["ip"=>visitor::ip(),"date_visite"=>date('Y-m-d')]);
-    }
+    // 	visitor::create(["ip"=>visitor::ip(),"date_visite"=>date('Y-m-d')]);
+    // }
 
     $_SESSION['IdProduits']=1;
 
