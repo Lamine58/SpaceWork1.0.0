@@ -129,7 +129,7 @@ function sendMessage($id_phone,$message){
 }
 
 
-function VerificationPost($arrayPost,$required){
+function required($arrayPost,$required){
 
     $errors=[];
 
@@ -489,4 +489,50 @@ function DevisMail($tableauPost)
 
 
     return mail($email, $sujet, $msg, $headers);
+}
+
+function AjaxQueryJS($id_form){
+
+	?>
+		<script
+		  src="https://code.jquery.com/jquery-3.5.1.js"
+		  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+		  crossorigin="anonymous"></script>
+	     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>
+		 <script type="text/javascript">
+		 	
+
+	        $('.<?= $id_form ?>').submit(function(e){
+
+
+	            e.preventDefault();
+
+	            var form = $(this).serialize();
+
+	            $.ajax({
+	                    type: 'POST',
+	                    url: $(this).attr('action'),
+	                    data: form,
+	                    dataType: 'json',
+	                    success: function (result){
+
+
+	                        if(result.status=="success"){
+
+	                            swal("Demade", result.message, result.status);  
+	                            setTimeout(()=>window.location.reload(),2000);
+
+	                        }else{
+	                            swal("Demade", result.message, result.status);
+	                        }
+
+	                        
+	                    }
+	                });
+
+	        });
+
+		 </script>
+
+	<?php  
 }

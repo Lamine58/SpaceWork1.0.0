@@ -5,8 +5,14 @@ RewriteEngine On
 #RewriteCond %{HTTP_HOST} ^(?:www\.)?toimoi\.org(?:.*)$ [nc]
 #RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [redirect=301,L]
 
+#pages
 RewriteRule ^([a-zA-Z0-9/]+)$ index.php?page=$1
 
+#controller
+RewriteRule ^([a-z]+)_([a-zA-Z0-9]+)$ _controllers/controller$2.php?function=$1_$2
+RewriteRule ^([a-z]+)_([a-zA-Z0-9]+)_([0-9]+)$ _controllers/controller$2.php?function=$1_$2&id=$3
+
+#add more
 
 ErrorDocument 404 /404
 

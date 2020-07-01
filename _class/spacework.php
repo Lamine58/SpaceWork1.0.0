@@ -77,7 +77,7 @@
 
     }
 
-    public function updade(){
+    public function update(){
 
 
       if(is_null($this->id))
@@ -158,7 +158,7 @@
       global $db;
       $class_name=get_called_class();
 
-      $query=$bd->prepare("SELECT * FROM $class_name WHERE $field=:value");
+      $query=$db->prepare("SELECT * FROM $class_name WHERE $field=:value");
       $query->execute(["value"=>$value]);
       return $query->FetchAll(PDO::FETCH_OBJ);            
     }

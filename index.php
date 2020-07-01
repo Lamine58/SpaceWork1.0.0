@@ -5,9 +5,7 @@
     include "_functions/functions.php";
 
     spl_autoload_register(function($class){
-
         include "_class/".$class.".php";
-
     });
 
     if(isset($_SESSION['lang'])){
