@@ -30,8 +30,6 @@
     // 	visitor::create(["ip"=>visitor::ip(),"date_visite"=>date('Y-m-d')]);
     // }
 
-    $_SESSION['IdProduits']=1;
-
    	$access = new access;
    	$access->as_access($_GET['page']);
     
